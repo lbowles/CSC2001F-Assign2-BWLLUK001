@@ -34,7 +34,7 @@ public class AccessAVLApp  {
   
   // Returns a random student ID for Testing
   static public String getRanID(int pos) {
-      return listArr[pos] ; 
+      return listArr[pos] ; //.substring(0,9)
   }
   
   // Reset AVL
