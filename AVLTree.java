@@ -51,7 +51,6 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
       {
       TestAVL.opCount++;
          if (balanceFactor (p.right) < 0) {
-            TestAVL.opCount++;
             p.right = rotateRight (p.right);
             }
          return rotateLeft (p);
@@ -61,7 +60,6 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
       {
       TestAVL.opCount++;
          if (balanceFactor (p.left) > 0) {
-            TestAVL.opCount++;
             p.left = rotateLeft (p.left);
             }
          return rotateRight (p);
@@ -183,8 +181,7 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
       {
          TestAVL.opCount++;
          for ( int i=0; i<level; i++ )
-            TestAVL.opCount++;
-            System.out.print (" ");
+         System.out.print (" ");
          System.out.println (node.data);
          treeOrder (node.left, level+1);
          treeOrder (node.right, level+1);

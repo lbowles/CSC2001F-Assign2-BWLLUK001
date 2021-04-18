@@ -109,12 +109,10 @@ public class BinaryTree<dataType>
          visit (node);
          TestAVL.opCount++; 
          if (node.getLeft () != null) {
-            TestAVL.opCount++;
             q.enQueue (node.getLeft ());
             }
          TestAVL.opCount++; 
          if (node.getRight () != null) {
-            TestAVL.opCount++;
             q.enQueue (node.getRight ());
             }
       }
