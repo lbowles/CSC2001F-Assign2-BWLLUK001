@@ -10,7 +10,7 @@ public class AccessAVLApp  {
 
   // Declaring Varibles 
   public static int startRange = 0 ; 
-  public static int endRange = 5000 ;
+  public static int endRange = 4999 ;
 
   // Decaring array for text line items (for getting random ids for testing)
   public static String[] listArr = new String[5000]; 

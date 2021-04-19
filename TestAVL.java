@@ -32,26 +32,25 @@ public class TestAVL  {
     System.out.println("Enter the increment size of the dataset to generate a test.");
     int ibaseData = Integer.parseInt(userInput.nextLine());
     int idata = ibaseData ; 
-    setFileRange(idata);
-    AccessAVLApp.main(null);
     System.out.println(" ");
     
-    int[] arrAll = new int[10] ; 
+    int[]  arrInsert = new int[10] ; 
     int[] arrFind = new int[10] ;
     int[] arrFindInv = new int[10] ;
     String[] arrRanges = new String[10] ; 
     
     System.out.println(lower +"  " +upper) ; 
     for (int i=0;i<10;i++) {
-       
+    
        //Recording Range 
        arrRanges[i] = "["+lower+"-"+upper+"]" ; 
        
+       //Testing Insert
        opCount = 0 ;
-       //Testing print all students
-       AccessAVLApp.printAllStudents(); 
-       arrAll[i] = opCount;
-       
+       setFileRange(idata);
+       AccessAVLApp.main(null);
+       arrInsert[i] = opCount;
+        
        //Testing finding a student name
        opCount = 0 ; 
        input = fetchRanID() ;
@@ -64,11 +63,8 @@ public class TestAVL  {
        arrFindInv[i] = opCount;
        
        // Reseting for next test
-       AccessAVLApp.resetAVL() ;
-       opCount=0 ; 
-       idata = idata+ibaseData ; 
-       setFileRange(idata);
-       AccessAVLApp.main(null);
+       idata = idata+ibaseData ;
+       AccessAVLApp.resetAVL() ; 
     } 
     
     System.out.println(" "); 
@@ -85,26 +81,26 @@ public class TestAVL  {
       }
     }
     
-    //Print all results
+    //Insertion results
     System.out.println(" "); 
     System.out.println(" "); 
-    System.out.println("Print All Results:") ;
+    System.out.println("Insert Results:") ;
     int imin = 10000 ; 
     int imax = 0 ;
     double davg = 0 ;
     for(int i=0;i<10;i++){
       if (i==9) {
-         System.out.print(arrAll[i]); 
+         System.out.print( arrInsert[i]); 
       } else {
-         System.out.print(arrAll[i] +", ");
+         System.out.print( arrInsert[i] +", ");
       } 
-      if (arrAll[i] < imin) {
-         imin = arrAll[i];
+      if ( arrInsert[i] < imin) {
+         imin =  arrInsert[i];
       } 
-      if (arrAll[i] > imax) {
-         imax = arrAll[i];
+      if ( arrInsert[i] > imax) {
+         imax =  arrInsert[i];
       } 
-      davg = davg + arrAll[i] ;         
+      davg = davg +  arrInsert[i] ;         
     } 
     davg = davg/10 ;
     System.out.println(" "); 
@@ -123,10 +119,10 @@ public class TestAVL  {
       } else {
          System.out.print(arrFind[i] +", ");
       } 
-      if (arrAll[i] < imin) {
+      if ( arrFind[i] < imin) {
          imin = arrFind[i];
       } 
-      if (arrAll[i] > imax) {
+      if ( arrFind[i] > imax) {
          imax = arrFind[i];
       } 
       davg = davg + arrFind[i] ;     
@@ -147,10 +143,10 @@ public class TestAVL  {
       } else {
          System.out.print(arrFindInv[i] +", ");
       }
-      if (arrAll[i] < imin) {
+      if ( arrFindInv[i] < imin) {
          imin = arrFindInv[i];
       } 
-      if (arrAll[i] > imax) {
+      if ( arrFindInv[i] > imax) {
          imax = arrFindInv[i];
       } 
       davg = davg + arrFindInv[i] ;     

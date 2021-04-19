@@ -17,12 +17,12 @@ public class BinaryTree<dataType>
    }   
    public int getHeight ( BinaryTreeNode<dataType> node )
    {
-      TestAVL.opCount++; 
+        
       if (node == null){
          return -1;
       }
       else {
-         TestAVL.opCount++; 
+           
          return 1 + Math.max (getHeight (node.getLeft ()), getHeight (node.getRight ()));
       }
    }
@@ -33,12 +33,12 @@ public class BinaryTree<dataType>
    }   
    public int getSize ( BinaryTreeNode<dataType> node )
    {
-      TestAVL.opCount++; 
+        
       if (node == null) {
          return 0;
       }
       else { 
-         TestAVL.opCount++; 
+           
          return 1 + getSize (node.getLeft ()) + getSize (node.getRight ());
       }
    }
@@ -54,7 +54,7 @@ public class BinaryTree<dataType>
    }
    public void preOrder ( BinaryTreeNode<dataType> node )
    {
-      TestAVL.opCount++; 
+        
       if (node != null)
       {  
          visit (node);
@@ -69,7 +69,7 @@ public class BinaryTree<dataType>
    }
    public void postOrder ( BinaryTreeNode<dataType> node )
    {
-      TestAVL.opCount++; 
+        
       if (node != null)
       {
          postOrder (node.getLeft ());
@@ -84,7 +84,7 @@ public class BinaryTree<dataType>
    }
    public void inOrder ( BinaryTreeNode<dataType> node )
    {
-      TestAVL.opCount++; 
+      TestAVL.opCount++;  
       if (node != null)
       {
          inOrder (node.getLeft ());
@@ -95,24 +95,26 @@ public class BinaryTree<dataType>
 
    public void levelOrder ()
    {
-      TestAVL.opCount++; 
+        
       if (root == null) {
          return;
       }
       BTQueue<dataType> q = new BTQueue<dataType> ();
       q.enQueue (root);
       BinaryTreeNode<dataType> node;
-      TestAVL.opCount++; 
+        
       while ((node = q.getNext ()) != null)
       {  
-         TestAVL.opCount++;
+          
          visit (node);
-         TestAVL.opCount++; 
+
          if (node.getLeft () != null) {
+             
             q.enQueue (node.getLeft ());
             }
-         TestAVL.opCount++; 
+         
          if (node.getRight () != null) {
+              
             q.enQueue (node.getRight ());
             }
       }

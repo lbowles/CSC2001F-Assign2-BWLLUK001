@@ -7,7 +7,7 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
 {
    public int height ( BinaryTreeNode<dataType> node )
    {
-      TestAVL.opCount++;
+       
       if (node != null)
          return node.height;
       return -1;
@@ -46,19 +46,19 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
    public BinaryTreeNode<dataType> balance ( BinaryTreeNode<dataType> p )
    {
       fixHeight (p);
-      TestAVL.opCount++;
+       
       if (balanceFactor (p) == 2)
       {
-      TestAVL.opCount++;
+       
          if (balanceFactor (p.right) < 0) {
             p.right = rotateRight (p.right);
             }
          return rotateLeft (p);
       }
-      TestAVL.opCount++;
+       
       if (balanceFactor (p) == -2)
       {
-      TestAVL.opCount++;
+       
          if (balanceFactor (p.left) > 0) {
             p.left = rotateLeft (p.left);
             }
@@ -73,16 +73,18 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
    }
    public BinaryTreeNode<dataType> insert ( dataType d, BinaryTreeNode<dataType> node )
    {
-      TestAVL.opCount++;
-      TestAVL.opCount++; 
+       
+      TestAVL.opCount++;  
       if (node == null) {
          return new BinaryTreeNode<dataType> (d, null, null);
          }
+      TestAVL.opCount++;
       if (d.compareTo (node.data) <= 0) {
+      
          node.left = insert (d, node.left);
          }
       else {
-         TestAVL.opCount++; 
+         TestAVL.opCount++;
          node.right = insert (d, node.right);
          }
       return balance (node);
@@ -94,22 +96,22 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
    }   
    public BinaryTreeNode<dataType> delete ( dataType d, BinaryTreeNode<dataType> node )
    {
-      TestAVL.opCount++;
+       
       if (node == null) return null ;
-      TestAVL.opCount++;
+       
       if (d.compareTo (node.data) < 0) { 
          node.left = delete (d, node.left);
       }   
       else if (d.compareTo (node.data) > 0) {
-         TestAVL.opCount++; 
+           
          node.right = delete (d, node.right);
       } 
       else
       {
-         TestAVL.opCount++; 
+           
          BinaryTreeNode<dataType> q = node.left;
          BinaryTreeNode<dataType> r = node.right;
-         TestAVL.opCount++;
+          
          if (r == null) { 
             return q;
          }
@@ -123,19 +125,19 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
    
    public BinaryTreeNode<dataType> findMin ( BinaryTreeNode<dataType> node )
    {
-      TestAVL.opCount++;
+       
       if (node.left != null) { 
          return findMin (node.left);
          }
       else {
-         TestAVL.opCount++; 
+           
          return node;
          }
    }
 
    public BinaryTreeNode<dataType> removeMin ( BinaryTreeNode<dataType> node )
    {
-      TestAVL.opCount++;
+       
       if (node.left == null) {
          return node.right;
          }
@@ -145,27 +147,25 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
 
    public BinaryTreeNode<dataType> find ( dataType d )
    {
-      TestAVL.opCount++;
       if (root == null) {
          return null;
          }
-      else {
-         TestAVL.opCount++; 
+      else { 
          return find (d, root);
          }
    }
    public BinaryTreeNode<dataType> find ( dataType d, BinaryTreeNode<dataType> node )
    {
-      TestAVL.opCount++;
+      TestAVL.opCount++; 
       if (d.compareTo (node.data) == 0) {
          return node;
          }
       else if (d.compareTo (node.data) < 0) {
-         TestAVL.opCount++;
+         TestAVL.opCount++; 
          return (node.left == null) ? null : find (d, node.left); 
          }
       else {
-         TestAVL.opCount++;
+         TestAVL.opCount++; 
          return (node.right == null) ? null : find (d, node.right); 
          }
    }
@@ -176,10 +176,10 @@ public class AVLTree<dataType extends Comparable<? super dataType>> extends Bina
    }
    public void treeOrder ( BinaryTreeNode<dataType> node, int level )
    {
-      TestAVL.opCount++;
+       
       if (node != null) 
       {
-         TestAVL.opCount++;
+          
          for ( int i=0; i<level; i++ )
          System.out.print (" ");
          System.out.println (node.data);
