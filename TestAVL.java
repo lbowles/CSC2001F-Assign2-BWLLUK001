@@ -34,7 +34,8 @@ public class TestAVL  {
     int idata = ibaseData ; 
     System.out.println(" ");
     
-    int[]  arrInsert = new int[10] ; 
+    int[] arrInsert = new int[10] ; 
+    int[] arrInsertS = new int[10] ; 
     int[] arrFind = new int[10] ;
     int[] arrFindInv = new int[10] ;
     String[] arrRanges = new String[10] ; 
@@ -50,6 +51,11 @@ public class TestAVL  {
        setFileRange(idata);
        AccessAVLApp.main(null);
        arrInsert[i] = opCount;
+       
+       //Testing Insert Single Item
+       opCount= 0 ; 
+       AccessAVLApp.avl.insert("PWOOLU001 Olun Powell") ; 
+       arrInsertS[i] = opCount;
         
        //Testing finding a student name
        opCount = 0 ; 
@@ -81,10 +87,10 @@ public class TestAVL  {
       }
     }
     
-    //Insertion results
+    //Inserting All results
     System.out.println(" "); 
     System.out.println(" "); 
-    System.out.println("Insert Results:") ;
+    System.out.println("Insert All Results:") ;
     int imin = 10000 ; 
     int imax = 0 ;
     double davg = 0 ;
@@ -109,6 +115,29 @@ public class TestAVL  {
     imax = 0 ;
     davg = 0 ; 
     
+    //Inserting one item
+    System.out.println(" "); 
+    System.out.println("Insert One Item Results:") ;
+    for(int i=0;i<10;i++){
+      if (i==9) {
+         System.out.print( arrInsertS[i]); 
+      } else {
+         System.out.print( arrInsertS[i] +", ");
+      } 
+      if ( arrInsertS[i] < imin) {
+         imin =  arrInsertS[i];
+      } 
+      if ( arrInsertS[i] > imax) {
+         imax =  arrInsertS[i];
+      } 
+      davg = davg +  arrInsertS[i] ;         
+    } 
+    davg = davg/10 ;
+    System.out.println(" "); 
+    System.out.println("Min = "+imin+", Max = "+imax+", Avg = "+davg); 
+    imin = 10000 ;
+    imax = 0 ;
+    davg = 0 ; 
 
     //Print finding a student name 
     System.out.println(" "); 
