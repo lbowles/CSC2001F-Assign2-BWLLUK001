@@ -6,10 +6,22 @@
 
 
 public class BinaryTreeNode<dataType>
-{
+{  
+   /**
+    * Datatype for Binary Tree node. 
+    */
    dataType data;
+   /**
+    * Left Binary Tree Node. 
+    */
    BinaryTreeNode<dataType> left;
+   /**
+    * Right Binary Tree Node.
+    */
    BinaryTreeNode<dataType> right;
+   /**
+    * height of Binary Tree node 
+    */
    int height;
    
    /**

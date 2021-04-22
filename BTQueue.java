@@ -6,9 +6,19 @@
 
 public class BTQueue<dataType>
 {   
+   /**
+    * Binary Tree Queue head node. 
+    */
    BTQueueNode<dataType> head;
+   /**
+    * Binary Tree Queue tail node. 
+    */
    BTQueueNode<dataType> tail;
-      
+   
+   
+   /**
+    * Sets the head and tail to null 
+    */   
    public BTQueue ()
    {
       head = null;
@@ -34,11 +44,10 @@ public class BTQueue<dataType>
    
    
    /** 
-    * Gets the next tail node in Binary Tree.
+    * Sets the next tail node in Binary Tree.
     *
     * @param node Binary Tree node with specified datatype.
     *
-    * @return the next tail node.
     */
    public void enQueue ( BinaryTreeNode<dataType> node )
    {

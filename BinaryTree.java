@@ -5,8 +5,14 @@
 */
 public class BinaryTree<dataType>
 {
+   /**
+    * Declare Binary Tree Node. 
+    */
    BinaryTreeNode<dataType> root;
    
+   /**
+    * Sets Binary Tree root to null
+    */
    public BinaryTree ()
    {
       root = null;
@@ -82,6 +88,9 @@ public class BinaryTree<dataType>
       System.out.println (node.data);
    }
    
+   /**
+    * Sets tree in pre order. 
+    */
    public void preOrder ()
    {
       preOrder (root);
@@ -102,7 +111,9 @@ public class BinaryTree<dataType>
          preOrder (node.getRight ());
       }   
    }
-
+   /**
+    * Sets tree in post order. 
+    */
    public void postOrder ()
    {
       postOrder (root);
@@ -123,7 +134,10 @@ public class BinaryTree<dataType>
          visit (node);
       }   
    }
-
+   
+   /**
+    * Sets tree in order. 
+    */
    public void inOrder ()
    {
       inOrder (root);
@@ -147,8 +161,6 @@ public class BinaryTree<dataType>
 
    /** 
     * Re orders the Binary tree.
-    *
-    * @return  Nothing if empty
     */
    public void levelOrder ()
    {
