@@ -1,7 +1,8 @@
-// Hussein's Binary Tree
-// 26 March 2017
-// Hussein Suleman
-
+/**
+* Hussein's Binary Tree
+*
+* @author Hussein Suleman
+*/
 public class BinaryTree<dataType>
 {
    BinaryTreeNode<dataType> root;
@@ -11,10 +12,23 @@ public class BinaryTree<dataType>
       root = null;
    }
    
+   /**
+    * Gets the height of the tree. 
+    *
+    * @return height of tree.
+    */
    public int getHeight ()
    {
       return getHeight (root);
    }   
+   
+   /** 
+    *  Gets the height from the inputted Binary Tree node.
+    *
+    * @param node  Binary Tree Node with specified datatype. 
+    *
+    * @return int  Height of the tree.
+    */
    public int getHeight ( BinaryTreeNode<dataType> node )
    {
         
@@ -27,10 +41,24 @@ public class BinaryTree<dataType>
       }
    }
    
+   
+   /** 
+    * Gets the size of the Binary Tree.
+    *
+    * @return int size of Binary Tree.
+    */
    public int getSize ()
    {
       return getSize (root);
    }   
+   
+   /** 
+    * Calculates the size of the inputted Binary Tree node. 
+    *
+    * @param node Binary Tree node with specified datatype.
+    *
+    * @return int size of the Binary Tree node. 
+    */
    public int getSize ( BinaryTreeNode<dataType> node )
    {
         
@@ -43,6 +71,12 @@ public class BinaryTree<dataType>
       }
    }
    
+   
+   /** 
+    * Prints out the data in the tree. 
+    *
+    * @param node  Binary Tree node with specified datatype.
+    */
    public void visit ( BinaryTreeNode<dataType> node )
    {
       System.out.println (node.data);
@@ -52,6 +86,12 @@ public class BinaryTree<dataType>
    {
       preOrder (root);
    }
+   
+   /** 
+    * Peparing for ordering on tree
+    *
+    * @param node  Binary Tree node with specified datatype.
+    */
    public void preOrder ( BinaryTreeNode<dataType> node )
    {
         
@@ -67,6 +107,12 @@ public class BinaryTree<dataType>
    {
       postOrder (root);
    }
+   
+   /** 
+    * Ording after preOrdering of tree. 
+    *
+    * @param node Binary Tree node with specified datatype.
+    */
    public void postOrder ( BinaryTreeNode<dataType> node )
    {
         
@@ -82,6 +128,12 @@ public class BinaryTree<dataType>
    {
       inOrder (root);
    }
+   
+   /** 
+    * Ordering of left and right nodes
+    *
+    * @param node Binary Tree node with specified datatype.
+    */
    public void inOrder ( BinaryTreeNode<dataType> node )
    {
       TestAVL.opCount++;  
@@ -93,6 +145,11 @@ public class BinaryTree<dataType>
       }   
    }
 
+   /** 
+    * Re orders the Binary tree.
+    *
+    * @return  Nothing if empty
+    */
    public void levelOrder ()
    {
         

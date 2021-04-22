@@ -1,6 +1,8 @@
-// Hussein's Binary Tree
-// 26 March 2017
-// Hussein Suleman
+/**
+* Hussein's Binary Tree Queue Node
+*
+* @author Hussein Suleman
+*/
 
 public class BTQueueNode<dataType>
 {

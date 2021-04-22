@@ -1,16 +1,36 @@
-// Generates a test of the AVL by running the inputed incremental data set size 10 times
-
 import java.util.Scanner;
 import java.util.Random ;
 
+/**
+ * The TestAVL program generates a test to find number operations to performe tasks 
+ * by the AVL Trees running over the inputed incremental data set size 10 times.
+ *  
+ * @author Luke Bowles
+ * @version 1.3
+ */
 public class TestAVL  {
-  
+  /**
+   * Lower bound of data set. 
+   */
   public static int lower = 0 ; 
+  /**
+   * Upper bound of data set. 
+   */
   public static int upper = 5000 ; 
+  /**
+   * Input from the user. 
+   */
   public static String input = "";
+  /**
+   * Count of the number of operations performed.  
+   */
   public static int opCount = 0 ; 
   
-  // Generates a given sized range for the data sets with a random starting point
+  /**
+   * Generates a given sized range for the data sets with a random starting point.
+   *
+   * @param dataSize  the integer for the data set size.  
+   */
   static public void setFileRange (int dataSize) { 
     Random rand = new Random() ; 
     lower = rand.nextInt(5000-dataSize);
@@ -20,16 +40,25 @@ public class TestAVL  {
     AccessAVLApp.endRange = upper ; 
   }
   
-  // Gets randomly picked student ID (in the range) for testing from AccessAVLApp
+  /**
+   * Gets a randomly selected studentID (in the dataset range). 
+   *
+   * @return String  The randomly generated studentID.  
+   */
   static public String fetchRanID() {
     int testID = (int)Math.floor(Math.random()*(upper-lower+1)+lower);
     return AccessAVLApp.getRanID(testID) ; 
   }
-
+  
+  /**
+   * Runs the automated testing of the AVL Tree. 
+   * 
+   * @param args[]  main arguments.
+   */
   public static void main (String args[]) {
-    // Setting up for testing
     Scanner userInput = new Scanner(System.in);
     System.out.println("Enter the increment size of the dataset to generate a test.");
+
     int ibaseData = Integer.parseInt(userInput.nextLine());
     int idata = ibaseData ; 
     System.out.println(" ");
@@ -91,6 +120,7 @@ public class TestAVL  {
     System.out.println(" "); 
     System.out.println(" "); 
     System.out.println("Insert All Results:") ;
+
     int imin = 10000 ; 
     int imax = 0 ;
     double davg = 0 ;
